@@ -1,0 +1,73 @@
+<Button>:
+	font_size: 15
+<Label>:
+	color: 1,1,1,1
+	
+<MainWindow>:
+	id: main
+	canvas.before:
+		Rectangle:
+			pos: self.pos
+			size: self.size
+			source:"nun.jpg"
+			
+	orientation: "vertical"
+
+	BoxLayout:
+		height: 30
+		size_hint_y: None
+		Label:
+			text: ""
+			size_hint_x: 0.9
+		Button:
+			text: "X"
+			
+			size_hint_x: 0.05
+			
+	
+	BoxLayout:
+		
+		size_hint_x: 0.3
+		
+		orientation: "vertical"
+		Button:
+			size_hint_y: None
+			height: 40
+			text: "My Profile"
+		Button:
+			size_hint_y: None
+			height: 40
+			text: "Python"
+		Button:
+			size_hint_y: None
+			height: 40
+			text: "C++"
+		Button:
+			size_hint_y: None
+			height: 40
+			text: "Java"
+		Button:
+			size_hint_y: None
+			height: 40
+			text: "Rasberry Pi"
+		Button:
+			size_hint_y: None
+			height: 40
+			text: "Help & Contact"
+		Button:
+			size_hint_y: None
+			height: 40
+			text: "Discussion Forum"
+		Button:
+			size_hint_y: None
+			height: 40
+			text: "Log Out"
+		Label:
+			text: ""
+			size_hint_Y: 60
+	
+			
+		
+		
+		
+		

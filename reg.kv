@@ -1,0 +1,157 @@
+<Button>:
+	font_size: 16
+<Label>:
+	color: 1,1,1,1
+
+<Signup>:
+	name: "second"
+	id: reg_win
+	orientation: "vertical"
+	spacing: 10
+	space_x: self.size[0]/3
+	canvas.before:
+		Color:
+			rgba:(0,0,0,1)
+		Rectangle:
+			size: self.size 
+			pos: self.pos
+
+	 
+	BoxLayout:
+		size_hint_y: None
+		height: 50
+		canvas.before:
+			Color:
+				rgba:(0.06,0.45,0.45,1)
+			Rectangle:
+				size: self.size
+				pos: self.pos
+		Label:
+			text: "SIGN UP"
+			bold: True
+
+	
+	Label:
+		id: info
+		text: ''
+		markup: True
+		size_hint_y: None
+		height: 20
+		
+	BoxLayout:
+		
+		orientation: "vertical"
+		padding: reg_win.space_x,10 
+		BoxLayout:
+			spacing: 10
+			padding: 0,0,0,12
+			orientation: "horizontal"
+			size_hint_y: None
+			height: 40
+			Label:
+				id: name
+				text: "Name: "
+			TextInput:
+				
+				id: name
+				multiline: False
+				focus: True
+		BoxLayout:
+			orientation: "horizontal"
+			padding: 0,0,0,12
+			spacing: 10
+			size_hint_y: None
+			height: 40
+			Label:
+				text: "Branch: "
+			TextInput:
+				id: branch
+				multiline: False
+		BoxLayout:
+			padding: 0,0,0,12
+			spacing: 10
+			orientation: "horizontal"
+			size_hint_y: None
+			height: 40
+			Label:
+				id: year
+				text: "Year: "
+			TextInput:
+				id: year
+				multiline: False
+				focus: True
+				
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint_y: None
+			height: 40
+			padding: 0,0,0,12
+			Label:
+				id: username_field
+				text: "Username: "
+			TextInput:
+				id: name
+				multiline: False
+				focus: True
+				
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint_y: None
+			height: 40
+			padding: 0,0,0,12
+			Label:
+				id: pwd
+				text: "Password: "
+			TextInput:
+				id: pwd
+				multiline: False
+				password:True
+				focus: True
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint_y: None
+			padding: 0,0,0,12
+			height: 40
+			Label:
+				id: pwd
+				text: "Confirm Password: "
+			TextInput:
+				id: pwd1
+				multiline: False
+				focus: True
+				
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint_y: None
+			height: 40
+			padding: 0,0,0,12
+			Label:
+				id: email
+				text: "Email id: "
+			TextInput:
+				id: email
+				multiline: False
+				focus: True
+				
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint_y: None
+			padding: 0,0,0,12
+			height: 40
+			Label:
+				id: contact	
+				text: "Contact no.: "
+			TextInput:
+				id: phone
+				multiline: False
+				focus: True
+				
+		
+				
+		Button:
+			size_hint_y: None
+			height: 40
+			text: "Register"
+		
+		Label:
+			id: sp2

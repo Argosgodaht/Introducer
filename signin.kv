@@ -1,0 +1,273 @@
+WindowManager:
+	SigninWindow:
+	Signup:
+	
+<Button>:
+	font_size: 16
+<Label>:
+	color: 0,0,0,1
+
+<SigninWindow>:
+	nam: "create"
+	
+	user_name: user_name
+	pwd: pwd
+	pwd1:pwd1
+	name: name
+	branch: branch
+	year: year
+	email: email
+	contact: contact
+	
+	id: main_win
+	name: "main_win"
+	orientation: "vertical"
+	spacing: 10
+	space_x: self.size[0]/3
+	canvas.before:
+		Color:
+			rgba:(1,1,1,1)
+		Rectangle:
+			size: self.size 
+			pos: self.pos
+	 
+	BoxLayout:
+		size_hint_y: None
+		height: 50
+		canvas.before:
+			Color:
+				rgba:(0.06,0.45,0.45,1)
+			Rectangle:
+				size: self.size
+				pos: self.pos
+		Label:
+			text: "LOGIN SCREEN"
+			bold: True
+			size_hint_x: 0.9
+		Button:
+			text: "x"
+			size_hint_x: 0.1
+	
+	Label:
+		id: info
+		text: ''
+		markup: True
+		size_hint_y: None
+		height: 20
+		
+	BoxLayout:
+		orientation: "vertical"
+		padding: main_win.space_x,10 
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint_y: None
+			height: 40
+			Label:
+				id: username_field
+				text: "Username: "
+			TextInput:
+				id: user_name
+				hint_text: "u"
+				multiline: False
+				focus: True
+				on_text_validate: pwd_field.focus= True
+		BoxLayout:
+			orientation: "horizontal"
+			
+			size_hint_y: None
+			height: 40
+			Label:
+				text: "Password: "
+			TextInput:
+				id: pwd
+				hint_text: "pwd"
+				multiline: False
+				password: True
+				on_text_validate: root.validate_user()
+		Label:
+			id: sp
+			size_hint_y: None
+			height: 40
+		Button:
+			size_hint_y: None
+			height: 40
+			text: "Sign in"
+			on_release:
+				root.manager.transition.direction = "left"
+				root.login()
+
+		Button:
+			size_hint_y: None
+			height: 40
+			text: "Make a new account"
+			on_release:
+				app.root.current = "second" 
+				root.manager.transition.direction= "left"
+		Label:
+			id: sp2
+
+<Signup>:
+	name: "second"
+	id: reg_win
+	orientation: "vertical"
+	spacing: 10
+	space_x: self.size[0]/3
+	canvas.before:
+		Color:
+			rgba:(0.5,0.2,0.3,1)
+		Rectangle:
+			size: self.size 
+			pos: self.pos
+
+	 
+	BoxLayout:
+		size_hint_y: None
+		height: 50
+		canvas.before:
+			Color:
+				rgba:(0.06,0.45,0.45,1)
+			Rectangle:
+				size: self.size
+				pos: self.pos
+		Label:
+			text: "SIGN UP"
+			bold: True
+
+	
+	Label:
+		id: info
+		text: ''
+		markup: True
+		size_hint_y: None
+		height: 20
+		
+	BoxLayout:
+		
+		orientation: "vertical"
+		padding: reg_win.space_x,10 
+		BoxLayout:
+			spacing: 10
+			padding: 0,0,0,12
+			orientation: "horizontal"
+			size_hint_y: None
+			height: 40
+			Label:
+				id: name
+				text: "Name: "
+			TextInput:
+				
+				id: name
+				multiline: False
+				focus: True
+		BoxLayout:
+			orientation: "horizontal"
+			padding: 0,0,0,12
+			spacing: 10
+			size_hint_y: None
+			height: 40
+			Label:
+				text: "Branch: "
+			TextInput:
+				id: branch
+				multiline: False
+		BoxLayout:
+			padding: 0,0,0,12
+			spacing: 10
+			orientation: "horizontal"
+			size_hint_y: None
+			height: 40
+			Label:
+				id: year
+				text: "Year: "
+			TextInput:
+				id: year
+				multiline: False
+				focus: True
+				
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint_y: None
+			height: 40
+			padding: 0,0,0,12
+			Label:
+				id: username_field
+				text: "Username: "
+			TextInput:
+				id: user_name
+				multiline: False
+				focus: True
+				
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint_y: None
+			height: 40
+			padding: 0,0,0,12
+			Label:
+				id: passw
+				text: "Password: "
+			TextInput:
+				id: pwd
+				multiline: False
+				password:True
+				focus: True
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint_y: None
+			padding: 0,0,0,12
+			height: 40
+			Label:
+				id: pwd_re
+				text: "Confirm Password: "
+			TextInput:
+				id: pwd1
+				multiline: False
+				focus: True
+				
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint_y: None
+			height: 40
+			padding: 0,0,0,12
+			Label:
+				id: email_id
+				text: "Email id: "
+			TextInput:
+				id: email
+				multiline: False
+				focus: True
+				
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint_y: None
+			padding: 0,0,0,12
+			height: 40
+			Label:
+				id: contact	
+				text: "Contact no.: "
+			TextInput:
+				id: phone
+				multiline: False
+				focus: True
+				
+		
+				
+		Button:
+			size_hint_y: None
+			height: 40
+			text: "Register"
+			on_release:
+				root.manager.transition.direction = "right"
+				root.submit()
+				app.root.current = "main_win"
+				
+		Button:
+			text: "Back to signin"
+			size_hint_y: None
+			height: 40
+			on_release:
+				app.root.current = "main_win" 
+				root.manager.transition.direction= "right"
+				
+		
+		Label:
+			id: sp2
